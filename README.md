@@ -1,4 +1,4 @@
-# islami
+# Islami
 
 A new Flutter project.
 
