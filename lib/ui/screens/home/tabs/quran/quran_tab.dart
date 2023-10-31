@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:islami/modem/details_screen_argument.dart';
+import 'package:islami/ui/screens/screen_details/details_screeen.dart';
 import 'package:islami/ui/utilities/app_utlities.dart';
 import 'package:islami/ui/utilities/constant.dart';
 
@@ -40,7 +42,12 @@ class QuranTab extends StatelessWidget {
         Expanded(flex: 7,
         child: ListView.builder(itemBuilder:(_,index)
           =>  TextButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.pushNamed(context, DetailsScreen.routeName,
+               arguments:  DetailsScreenArgument(isQuranFile: true,
+                title:Constants.SurahNames[index],
+                content: "${index +1}.txt" ));
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
