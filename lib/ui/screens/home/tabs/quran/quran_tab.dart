@@ -7,6 +7,7 @@ import 'package:islami/ui/utilities/constant.dart';
 
 import '../../../../utilities/app_colors.dart';
 import '../../../../utilities/app_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatelessWidget {
 
@@ -28,8 +29,8 @@ class QuranTab extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("Surah Name",style:AppTheme.rowTextStyle),
-              Text("Verses Numbers",style: AppTheme.rowTextStyle,),
+              Text(AppLocalizations.of(context)!.surahName,style:AppTheme.rowTextStyle),
+              Text(AppLocalizations.of(context)!.versesNumbers,style: AppTheme.rowTextStyle,),
 
             ],
           ),

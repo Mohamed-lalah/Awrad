@@ -68,8 +68,8 @@ class HadethTab extends StatelessWidget {
   }
   void fillHadeth (){
   for (int i= 0;i<50;i++){
-    String constant="الحديث رقم";
-    String result ="  ${i+1}" + constant;
+    String constant=" الحديث رقم ";
+    String result ="  ${i+1} " + constant;
      ahadeth.add(result);
   }
 }

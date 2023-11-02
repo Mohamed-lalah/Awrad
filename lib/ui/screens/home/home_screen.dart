@@ -4,10 +4,10 @@ import 'package:islami/ui/screens/home/tabs/Hadeth/hadeth_tab.dart';
 import 'package:islami/ui/screens/home/tabs/Radio/radio_tab.dart';
 import 'package:islami/ui/screens/home/tabs/Sebha/sebha_tab.dart';
 import 'package:islami/ui/screens/home/tabs/quran/quran_tab.dart';
+import 'package:islami/ui/screens/home/tabs/setting/setting.dart';
 import 'package:islami/ui/utilities/app_theme.dart';
 import 'package:islami/ui/utilities/app_utlities.dart';
-
-import '../../utilities/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';import '../../utilities/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String  routeName= "homeScreen";
@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HadethTab(),
     SebhaTab(),
     RadioTab(),
+    Settings(),
   ];
 
   @override
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           centerTitle: true,
           backgroundColor: AppColors.transparent,
           elevation: 0,
-          title:Text("Islami",style:AppTheme.appBarTextStyle),
+          title:Text(AppLocalizations.of(context)!.islami,style:AppTheme.appBarTextStyle),
         ),
           bottomNavigationBar: buildBottomNavigationBar(),
         body: tabs[currenttabindex],
@@ -61,6 +62,8 @@ class _HomeScreenState extends State<HomeScreen> {
         BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppUtlities.iconhadeth)),label: "Hadeth"),
         BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppUtlities.iconSebha)),label: "Sebha"),
         BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppUtlities.iconradio)),label: "Radio"),
+        BottomNavigationBarItem(icon: Icon(Icons.settings),label: AppLocalizations.of(context)!.settings),
+
       ],
     ),
   );
