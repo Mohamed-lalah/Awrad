@@ -13,8 +13,7 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  bool arSwitch= false ;
-  bool modeSwitch= false ;
+
   late  SettingProvider provider;
 
   @override
@@ -30,24 +29,30 @@ class _SettingsState extends State<Settings> {
         ),
         SizedBox(height: 10,),
 
-        buildSettingTab("العربيه", arSwitch, (newValue) {
-          arSwitch= newValue;
-          if(arSwitch){
+        buildSettingTab("العربيه", provider.arSwitch, (newValue) {
+
+          provider.arSwitch= newValue;
+
+          if(provider.arSwitch){
             provider.setCurrentLocale("ar");
+
           }
           else {
             provider.setCurrentLocale("en");
+
           }
-
-
-
         }
         ),
-        buildSettingTab(AppLocalizations.of(context)!.darkMode, modeSwitch, (newValue)  {
-          modeSwitch=newValue;
-          setState(() {
 
-          });
+
+        buildSettingTab(AppLocalizations.of(context)!.darkMode, provider.darkModeSwitch, (newValue)  {
+          provider.darkModeSwitch=newValue;
+          if (provider.darkModeSwitch){
+            provider.setCurrentMode(ThemeMode.dark);
+          }
+          else
+            provider.setCurrentMode(ThemeMode.light);
+
         })
       ],
     );

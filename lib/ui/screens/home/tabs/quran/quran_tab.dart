@@ -19,11 +19,7 @@ class QuranTab extends StatelessWidget {
       children: [
         Expanded(flex: 3,child: Image.asset(AppUtlities.quranTabLogo)),
         SizedBox(height: 7,),
-        const Divider(
-          color: AppColors.primiary,
-          thickness: 3,
-          height: 2,
-        ),
+        const Divider(),
         Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,11 +31,7 @@ class QuranTab extends StatelessWidget {
             ],
           ),
         ),
-        Divider(
-          color: AppColors.primiary,
-          thickness: 3,
-          height: 2,
-        ),
+        Divider(),
         Expanded(flex: 7,
         child: ListView.builder(itemBuilder:(_,index)
           =>  TextButton(

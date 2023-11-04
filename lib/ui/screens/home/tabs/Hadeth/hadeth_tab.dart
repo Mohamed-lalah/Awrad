@@ -17,11 +17,7 @@ class HadethTab extends StatelessWidget {
       children: [
         Expanded(flex: 3,child: Image.asset(AppUtlities.ahadethTabLogo)),
         SizedBox(height: 7,),
-        const Divider(
-          color: AppColors.primiary,
-          thickness: 3,
-          height: 2,
-        ),
+        const Divider(),
         Expanded(
           child: Center(
             child: Row(
@@ -33,11 +29,7 @@ class HadethTab extends StatelessWidget {
             ),
           ),
         ),
-        Divider(
-          color: AppColors.primiary,
-          thickness: 3,
-          height: 2,
-        ),
+        Divider(),
         Expanded(flex: 7,
             child: ListView.builder(itemBuilder:(_,index)
             =>  TextButton(

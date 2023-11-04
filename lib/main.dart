@@ -4,6 +4,7 @@ import 'package:islami/providers/settings_provider.dart';
 import 'package:islami/ui/screens/home/home_screen.dart';
 import 'package:islami/ui/screens/screen_details/details_screeen.dart';
 import 'package:islami/ui/utilities/app_colors.dart';
+import 'package:islami/ui/utilities/app_theme.dart';
 import 'package:islami/ui/utilities/app_utlities.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -31,6 +32,11 @@ class MyApp extends StatelessWidget {
       supportedLocales: [Locale("en"),Locale("ar")],
 
       locale: Locale(provider.currentLocale),
+
+      themeMode: provider.currentMode,
+      theme: AppTheme.lightThemeData,
+      darkTheme: AppTheme.darkThemeDate,
+
 
     routes:   {
       HomeScreen.routeName :(_)=> HomeScreen(),
