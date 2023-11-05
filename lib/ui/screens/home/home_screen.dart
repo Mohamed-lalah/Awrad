@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:islami/providers/settings_provider.dart';
 import 'package:islami/ui/screens/home/tabs/Hadeth/hadeth_tab.dart';
 import 'package:islami/ui/screens/home/tabs/Radio/radio_tab.dart';
 import 'package:islami/ui/screens/home/tabs/Sebha/sebha_tab.dart';
@@ -7,7 +8,8 @@ import 'package:islami/ui/screens/home/tabs/quran/quran_tab.dart';
 import 'package:islami/ui/screens/home/tabs/setting/setting.dart';
 import 'package:islami/ui/utilities/app_theme.dart';
 import 'package:islami/ui/utilities/app_utlities.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';import '../../utilities/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';import '../../utilities/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String  routeName= "homeScreen";
@@ -29,15 +31,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SettingProvider provider = Provider.of(context);
     return Container(
-      decoration:  BoxDecoration(image: DecorationImage(image: AssetImage(AppUtlities.background),fit: BoxFit.fill)),
+      decoration:  BoxDecoration(image:
+
+      DecorationImage(image: provider.isDarkMode()? AssetImage(AppUtlities.backGroundDark)
+          : AssetImage(AppUtlities.background),
+
+          fit: BoxFit.fill)
+      ),
       child:  Scaffold(
         //backgroundColor: AppColors.transparent,
         appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: AppColors.transparent,
-          elevation: 0,
-          title:Text(AppLocalizations.of(context)!.islami,style:AppTheme.appBarTextStyle),
+          title:Text(AppLocalizations.of(context)!.islami,),
         ),
           bottomNavigationBar: buildBottomNavigationBar(),
         body: tabs[currenttabindex],
@@ -47,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget buildBottomNavigationBar() => Theme(
-    data: ThemeData(canvasColor: AppColors.primiary),
+    data: Theme.of(context).copyWith(canvasColor: Theme.of(context).primaryColor),
     child: BottomNavigationBar(
       currentIndex: currenttabindex,
       onTap: (index){
@@ -55,8 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
         setState(() {});
 
       },
-      selectedItemColor: AppColors.accent,
-      iconSize: 42,
       items: [
         BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppUtlities.iconQuran)),label: "Quran"),
         BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppUtlities.iconhadeth)),label: "Hadeth"),

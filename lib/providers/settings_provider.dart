@@ -10,6 +10,9 @@ class SettingProvider  extends ChangeNotifier{
 
   ThemeMode currentMode = ThemeMode.light;
 
+
+  bool isDarkMode ()=> currentMode==ThemeMode.dark;
+
   void setCurrentLocale (String newLocale){
 
     currentLocale= newLocale;

@@ -27,7 +27,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
     SettingProvider provider = Provider.of(context);
      readFile();
     return Container(
-      decoration:  BoxDecoration(image: DecorationImage(image: AssetImage(AppUtlities.background),fit: BoxFit.fill)),
+      decoration:  BoxDecoration(image:
+      DecorationImage(image: provider.isDarkMode()? AssetImage(AppUtlities.backGroundDark)
+          : AssetImage(AppUtlities.background),
+
+          fit: BoxFit.fill)),
       child:  Scaffold(
         backgroundColor: AppColors.transparent,
         appBar: AppBar(
@@ -43,8 +47,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text(fileContent,style: TextStyle(color: AppColors.accent,
-            fontSize: 25,),textDirection: TextDirection.rtl
+            child: Text(fileContent,style: Theme.of(context).textTheme.headlineLarge,textDirection: TextDirection.rtl
 
               ,textAlign: TextAlign.center,),
           ),
@@ -65,8 +68,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
         fileLines[i]+= argument.isQuranFile ? " ${i+1} " : " ";
       }
       fileContent=fileLines.join();
-      setState(() {
-      });
+
+      setState(() {});
     }
 
 

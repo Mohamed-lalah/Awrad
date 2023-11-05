@@ -25,7 +25,7 @@ class _SettingsState extends State<Settings> {
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(AppLocalizations.of(context)!.settings,style: AppTheme.settingTabTitle,textAlign: TextAlign.start,),
+          child: Text(AppLocalizations.of(context)!.settings,style: Theme.of(context).textTheme.bodyMedium,textAlign: TextAlign.start,),
         ),
         SizedBox(height: 10,),
 
@@ -62,7 +62,7 @@ class _SettingsState extends State<Settings> {
     return Row(
       children: [
         SizedBox(width: 18,),
-        Text(tilte,style: AppTheme.settingOptionTitle,),
+        Text(tilte,style: Theme.of(context).textTheme.bodySmall,),
         Spacer(),
         Switch(value: switchValue, onChanged: onChanged,activeColor: AppColors.primiary,)
 

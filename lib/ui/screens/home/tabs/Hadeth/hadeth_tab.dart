@@ -12,7 +12,8 @@ class HadethTab extends StatelessWidget {
   List <String> ahadeth =[];
   @override
   Widget build(BuildContext context) {
-   fillHadeth();
+     checkFilled(ahadeth);
+   print("ahadeth length :  ${ahadeth.length}");
     return Column(
       children: [
         Expanded(flex: 3,child: Image.asset(AppUtlities.ahadethTabLogo)),
@@ -23,7 +24,7 @@ class HadethTab extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("الأحاديث ",style: AppTheme.rowTextStyle,),
+                Text("الأحاديث ",style:Theme.of(context).textTheme.displayMedium),
 
               ],
             ),
@@ -42,12 +43,11 @@ class HadethTab extends StatelessWidget {
               child:  Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(ahadeth[index],style: TextStyle(color: AppColors.accent,fontSize: 25,
-                  fontWeight: FontWeight.normal),)
+                  Text(ahadeth[index],style:Theme.of(context).textTheme.displayLarge)
                 ],
               ),
             ),
-              itemCount: ahadeth.length,
+              itemCount:ahadeth.length,
             )
         ),
 
@@ -60,9 +60,15 @@ class HadethTab extends StatelessWidget {
   }
   void fillHadeth (){
   for (int i= 0;i<50;i++){
-    String constant=" الحديث رقم ";
-    String result ="  ${i+1} " + constant;
-     ahadeth.add(result);
+    String constant=" ${i+1} الحديث رقم ";
+     ahadeth.add(constant);
   }
+
 }
+  void checkFilled (List ahadeth){
+    if (ahadeth.isEmpty)
+      fillHadeth();
+    else
+      return ;
+  }
 }

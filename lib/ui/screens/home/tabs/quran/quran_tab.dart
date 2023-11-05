@@ -25,8 +25,8 @@ class QuranTab extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(AppLocalizations.of(context)!.surahName,style:AppTheme.rowTextStyle),
-              Text(AppLocalizations.of(context)!.versesNumbers,style: AppTheme.rowTextStyle,),
+              Text(AppLocalizations.of(context)!.surahName,style:Theme.of(context).textTheme.displayMedium),
+              Text(AppLocalizations.of(context)!.versesNumbers,style: Theme.of(context).textTheme.displayMedium,),
 
             ],
           ),
@@ -44,9 +44,9 @@ class QuranTab extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Expanded(child: Text(Constants.SurahNames[index],style: AppTheme.surahTextStyle,
+                Expanded(child: Text(Constants.SurahNames[index],style: Theme.of(context).textTheme.displayLarge,
                 textAlign: TextAlign.center,),),
-                Expanded(child: Text(Constants.surahVerses[index],style: AppTheme.surahTextStyle,
+                Expanded(child: Text(Constants.surahVerses[index],style:Theme.of(context).textTheme.displayLarge,
                 textAlign: TextAlign.center,),),
               ],
             ),

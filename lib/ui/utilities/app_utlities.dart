@@ -7,4 +7,5 @@ static const quranTabLogo= "assets/images/quran_tab_logo.png";
 static const background= "assets/images/background.png";
 static const ahadethTabLogo= "assets/images/ahadeth_tab_logo.png";
 static const iconQuran= "assets/images/icon_quran.png";
+static const backGroundDark= "assets/images/backgroundColor.png";
 }
