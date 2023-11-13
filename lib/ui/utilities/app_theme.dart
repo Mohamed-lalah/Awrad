@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-
 import 'app_colors.dart';
 
 abstract class AppTheme {
@@ -14,6 +13,7 @@ abstract class AppTheme {
   static TextStyle  settingOptionTitle= TextStyle(color: AppColors.accent,fontSize: 22, fontWeight: FontWeight.normal);
   static TextStyle  versesOrHadethStyle= TextStyle(color: AppColors.accent,
     fontSize: 25,);
+  static TextStyle  sebhaCount = const TextStyle(color: Color(0xff242424),fontWeight: FontWeight.w400,fontSize: 25);
 
   static ThemeData  lightThemeData= ThemeData(
     scaffoldBackgroundColor:  AppColors.transparent,
@@ -37,10 +37,11 @@ abstract class AppTheme {
     ),
     textTheme: TextTheme(
       bodySmall: settingOptionTitle,
-      bodyMedium: settingTabTitle,
+      bodyMedium:  settingTabTitle,
       displayMedium: rowTextStyle,
       displayLarge: surahTextStyle,
       headlineLarge: versesOrHadethStyle,
+      titleLarge: sebhaCount,
       
 
     )
@@ -80,7 +81,8 @@ abstract class AppTheme {
         bodyMedium: settingTabTitle.copyWith(color: AppColors.white),
         displayMedium: rowTextStyle.copyWith(color: AppColors.white),
         displayLarge: surahTextStyle.copyWith(color: AppColors.white),
-        headlineLarge: versesOrHadethStyle.copyWith(color: AppColors.accentDark)
+        headlineLarge: versesOrHadethStyle.copyWith(color: AppColors.accentDark),
+        titleLarge: sebhaCount,
       )
 
 

@@ -3,6 +3,7 @@
   "settings": "الأعدادات",
   "surahName"  :"اسم السوره",
   "darkMode" : "الوضع الداكن"  ,
-  "versesNumbers" : "عدد الأيات"
+  "versesNumbers" : "عدد الأيات",
+  "tasbeh" : "عدد التسبيحات"
 
 }

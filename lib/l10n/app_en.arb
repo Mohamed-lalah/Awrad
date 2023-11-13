@@ -3,6 +3,7 @@
    "settings": "Settings",
    "surahName"  : "Sura Name",
    "darkMode" : "Dark Mode",
-   "versesNumbers" : "Verses (no)"
+   "versesNumbers" : "Verses (no)",
+    "tasbeh" : "Tasbeh count"
 
  }
