@@ -14,13 +14,13 @@ class SebhaTab extends StatefulWidget {
 }
 
 class _SebhaTabState extends State<SebhaTab> {
+  int countZekr = 0;
+  int countList = 0;
+  double angle = 0;
   @override
   Widget build(BuildContext context) {
     double width= MediaQuery.of(context).size.width;
     double height= MediaQuery.of(context).size.height;
-    int countZekr = 0;
-    int countList = 0;
-
    return Container(
      width: width,
      margin: EdgeInsets.only(top: height*0.09),
@@ -37,22 +37,29 @@ class _SebhaTabState extends State<SebhaTab> {
                child: Padding(
                  padding:  EdgeInsets.only(left: width*0.1),
 
-                 child: GestureDetector(
-                   onTap: (){
-
-                   },
-                   child: Image.asset(AppUtlities.headSebha,
-                   fit: BoxFit.fill,
-                    height: height*0.1 ,
-                   width: width*0.2,),
-                 ),
+                 child: Image.asset(Theme.of(context).brightness==Brightness.light? AppUtlities.headSebha
+                 :AppUtlities.headSebhaDark,
+                 fit: BoxFit.fill,
+                  height: height*0.1 ,
+                 width: width*0.2,),
                ),
              ),
 
-             Image.asset(AppUtlities.bodySebha,
-               fit: BoxFit.fill,
-               height: height*0.25 ,
-               width: width*0.5,),
+             GestureDetector(
+               onTap: (){
+                 tasbehCount();
+                 setState(() {});
+               },
+               child: Transform.rotate(
+                 angle: angle ,
+                 child: Image.asset( Theme.of(context).brightness==Brightness.light? AppUtlities.bodySebha
+                   :AppUtlities.bodySebhaDark,
+                   fit: BoxFit.fill,
+                   height: height*0.25 ,
+                   width: width*0.5,)
+                  ,
+               ),
+             ),
 
            ],
          ),
@@ -70,7 +77,7 @@ class _SebhaTabState extends State<SebhaTab> {
          Container(
            padding: EdgeInsets.all(height*0.025),
            decoration: BoxDecoration(
-               color: Color(0xffB7935F).withOpacity(0.57),
+               color: Theme.of(context).primaryColor.withOpacity(0.57),
                borderRadius: BorderRadius.circular(25)
            ),
            child: Text("$countZekr",style: Theme.of(context).textTheme.titleLarge),
@@ -80,20 +87,18 @@ class _SebhaTabState extends State<SebhaTab> {
          SizedBox(height: height*0.03,),
 
          ElevatedButton(onPressed: (){
+           tasbehCount();
 
             },
              style: ElevatedButton.styleFrom(
-               backgroundColor: Theme.of(context).primaryColor,
+               backgroundColor:  Theme.of(context).cardColor,
                shape: RoundedRectangleBorder(
                  borderRadius: BorderRadius.circular(25),
                ),
              ),
 
              child:Text(
-               "${Constants.Zekr[countList]}",style: Theme.of(context).textTheme.titleLarge!.copyWith(
-               color: Colors.white
-             ),
-
+               "${Constants.Zekr[countList]}",style: Theme.of(context).textTheme.labelMedium
              )
 
          )
@@ -105,4 +110,19 @@ class _SebhaTabState extends State<SebhaTab> {
      ),
    );
   }
+  void tasbehCount (){
+    countZekr++;
+    if (countZekr>33){
+      countList++;
+      countZekr=0;
+    }
+    if (countList ==Constants.Zekr.length){
+      countList=0;
+    }
+    angle +=30;
+
+    setState(() {});
+  }
+
+
 }

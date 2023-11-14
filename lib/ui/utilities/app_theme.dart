@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 abstract class AppTheme {
 
@@ -9,15 +11,34 @@ abstract class AppTheme {
 
   static TextStyle  surahTextStyle= TextStyle(color: Color(0xff242424),fontSize: 25,fontWeight: FontWeight.normal);
   static TextStyle  rowTextStyle= TextStyle(color: Color(0xff242424),fontSize: 25,fontWeight: FontWeight.w600);
-  static TextStyle  settingTabTitle= TextStyle(color: AppColors.accent,fontSize: 25, fontWeight: FontWeight.w600);
+  static TextStyle  settingTabTitle= GoogleFonts.elMessiri(
+    textStyle: TextStyle(color: AppColors.accent,fontSize: 25, fontWeight: FontWeight.w600)
+  );
   static TextStyle  settingOptionTitle= TextStyle(color: AppColors.accent,fontSize: 22, fontWeight: FontWeight.normal);
   static TextStyle  versesOrHadethStyle= TextStyle(color: AppColors.accent,
     fontSize: 25,);
-  static TextStyle  sebhaCount = const TextStyle(color: Color(0xff242424),fontWeight: FontWeight.w400,fontSize: 25);
+  static TextStyle  sebhaCount = GoogleFonts.inter(
+    textStyle:TextStyle(color: Color(0xff242424),fontWeight: FontWeight.normal,fontSize: 25)
+  );
 
   static ThemeData  lightThemeData= ThemeData(
+    colorScheme: const ColorScheme(
+        brightness: Brightness.light,
+        primary: AppColors.primiary,
+        onPrimary: AppColors.primiary,
+        secondary: AppColors.primiary,
+        onSecondary: AppColors.primiary,
+        error: AppColors.primiary,
+        onError: AppColors.primiary,
+        background: AppColors.primiary,
+        onBackground: AppColors.primiary,
+        surface: AppColors.primiary,
+        onSurface: AppColors.primiary),
+
     scaffoldBackgroundColor:  AppColors.transparent,
     primaryColor: AppColors.primiary,
+    cardColor:  AppColors.primiary,
+    canvasColor: AppColors.accent,
     appBarTheme:   AppBarTheme(
       centerTitle: true,
       backgroundColor: AppColors.transparent,
@@ -42,6 +63,7 @@ abstract class AppTheme {
       displayLarge: surahTextStyle,
       headlineLarge: versesOrHadethStyle,
       titleLarge: sebhaCount,
+      labelMedium: sebhaCount.copyWith(color: AppColors.white),
       
 
     )
@@ -53,10 +75,23 @@ abstract class AppTheme {
 
   static ThemeData   darkThemeDate= ThemeData(
       scaffoldBackgroundColor:  AppColors.transparent,
-
+      colorScheme: const ColorScheme(
+          brightness: Brightness.dark,
+          primary: AppColors.primiary,
+          onPrimary: AppColors.primiary,
+          secondary: AppColors.primiary,
+          onSecondary: AppColors.primiary,
+          error: AppColors.primiary,
+          onError: AppColors.primiary,
+          background: AppColors.primiary,
+          onBackground: AppColors.primiary,
+          surface: AppColors.primiary,
+          onSurface: AppColors.primiary),
       primaryColor: AppColors.primiaryDark,
+      cardColor:  AppColors.accentDark ,
+      canvasColor: AppColors.accentDark,
 
-      appBarTheme:   AppBarTheme(
+    appBarTheme:   AppBarTheme(
         centerTitle: true,
         backgroundColor: AppColors.transparent,
         elevation: 0,
@@ -82,7 +117,9 @@ abstract class AppTheme {
         displayMedium: rowTextStyle.copyWith(color: AppColors.white),
         displayLarge: surahTextStyle.copyWith(color: AppColors.white),
         headlineLarge: versesOrHadethStyle.copyWith(color: AppColors.accentDark),
-        titleLarge: sebhaCount,
+        titleLarge: sebhaCount.copyWith(color: AppColors.white),
+        labelMedium: sebhaCount
+
       )
 
 
