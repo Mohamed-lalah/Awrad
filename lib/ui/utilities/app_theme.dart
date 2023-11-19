@@ -47,7 +47,7 @@ abstract class AppTheme {
 
     ),
     dividerTheme: const DividerThemeData(
-      thickness: 3,
+      thickness: 1,
       color: AppColors.primiary,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -100,7 +100,7 @@ abstract class AppTheme {
       ),
 
       dividerTheme: const DividerThemeData(
-        thickness: 3,
+        thickness: 1,
         color: AppColors.accentDark,
       ),
 

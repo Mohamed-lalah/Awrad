@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami/providers/settings_provider.dart';
@@ -14,11 +16,10 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
 
-  late  SettingProvider provider;
+  late  prefsHelper provider;
 
   @override
   Widget build(BuildContext context) {
-
     provider= Provider.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -64,7 +65,7 @@ class _SettingsState extends State<Settings> {
         SizedBox(width: 18,),
         Text(tilte,style: Theme.of(context).textTheme.bodySmall,),
         Spacer(),
-        Switch(value: switchValue, onChanged: onChanged,activeColor: AppColors.primiary,)
+        Switch(value: switchValue, onChanged: onChanged,activeColor: AppColors.accentDark,)
 
       ],
     );

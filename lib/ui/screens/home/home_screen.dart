@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SettingProvider provider = Provider.of(context);
+    prefsHelper provider = Provider.of(context);
     return Container(
       decoration:  BoxDecoration(image:
 

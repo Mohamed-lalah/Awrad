@@ -24,7 +24,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     argument= ModalRoute.of(context)!.settings.arguments as DetailsScreenArgument;
-    SettingProvider provider = Provider.of(context);
+    prefsHelper provider = Provider.of(context);
      readFile();
     return Container(
       decoration:  BoxDecoration(image:
