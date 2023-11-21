@@ -11,14 +11,14 @@ abstract class AppTheme {
         color:    AppColors.accent)
   ) ;
 
-  static TextStyle? appBarTextStyleDetail = GoogleFonts.inter(
+  static TextStyle? appBarTextStyleDetail = GoogleFonts.elMessiri(
       textStyle: TextStyle(fontSize: 25,fontWeight: FontWeight.normal,
           color:    AppColors.accent)
   ) ;
 
 
 
-  static TextStyle  surahTextStyle= GoogleFonts.inter(
+  static TextStyle  surahTextStyle= GoogleFonts.elMessiri(
     textStyle:TextStyle(color: Color(0xff242424),fontSize: 25,fontWeight: FontWeight.normal)
   ) ;
   static TextStyle  rowTextStyle=  GoogleFonts.elMessiri(
@@ -32,11 +32,11 @@ abstract class AppTheme {
   static TextStyle  settingOptionTitle=GoogleFonts.elMessiri(
     textStyle: TextStyle(color: AppColors.accent,fontSize: 22, fontWeight: FontWeight.normal)
   );
-  static TextStyle  versesOrHadethStyle= GoogleFonts.inter(
+  static TextStyle  versesOrHadethStyle= GoogleFonts.elMessiri(
     textStyle: TextStyle(color: AppColors.accent,
         fontSize: 20,fontWeight: FontWeight.normal)
   ) ;
-  static TextStyle  sebhaCount = GoogleFonts.inter(
+  static TextStyle  sebhaCount = GoogleFonts.elMessiri(
     textStyle:TextStyle(color: Color(0xff242424),fontWeight: FontWeight.normal,fontSize: 25)
   );
 
