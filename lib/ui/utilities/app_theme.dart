@@ -6,17 +6,36 @@ import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppTheme {
 
-  static TextStyle? appBarTextStyle = TextStyle(fontSize: 30,fontWeight: FontWeight.bold,
-  color:    AppColors.accent);
+  static TextStyle? appBarTextStyle = GoogleFonts.elMessiri(
+    textStyle: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,
+        color:    AppColors.accent)
+  ) ;
 
-  static TextStyle  surahTextStyle= TextStyle(color: Color(0xff242424),fontSize: 25,fontWeight: FontWeight.normal);
-  static TextStyle  rowTextStyle= TextStyle(color: Color(0xff242424),fontSize: 25,fontWeight: FontWeight.w600);
+  static TextStyle? appBarTextStyleDetail = GoogleFonts.inter(
+      textStyle: TextStyle(fontSize: 25,fontWeight: FontWeight.normal,
+          color:    AppColors.accent)
+  ) ;
+
+
+
+  static TextStyle  surahTextStyle= GoogleFonts.inter(
+    textStyle:TextStyle(color: Color(0xff242424),fontSize: 25,fontWeight: FontWeight.normal)
+  ) ;
+  static TextStyle  rowTextStyle=  GoogleFonts.elMessiri(
+    textStyle: TextStyle(color: Color(0xff242424),fontSize: 25,fontWeight: FontWeight.w600)
+  );
+
+
   static TextStyle  settingTabTitle= GoogleFonts.elMessiri(
     textStyle: TextStyle(color: AppColors.accent,fontSize: 25, fontWeight: FontWeight.w600)
   );
-  static TextStyle  settingOptionTitle= TextStyle(color: AppColors.accent,fontSize: 22, fontWeight: FontWeight.normal);
-  static TextStyle  versesOrHadethStyle= TextStyle(color: AppColors.accent,
-    fontSize: 25,);
+  static TextStyle  settingOptionTitle=GoogleFonts.elMessiri(
+    textStyle: TextStyle(color: AppColors.accent,fontSize: 22, fontWeight: FontWeight.normal)
+  );
+  static TextStyle  versesOrHadethStyle= GoogleFonts.inter(
+    textStyle: TextStyle(color: AppColors.accent,
+        fontSize: 20,fontWeight: FontWeight.normal)
+  ) ;
   static TextStyle  sebhaCount = GoogleFonts.inter(
     textStyle:TextStyle(color: Color(0xff242424),fontWeight: FontWeight.normal,fontSize: 25)
   );
@@ -44,10 +63,13 @@ abstract class AppTheme {
       backgroundColor: AppColors.transparent,
       elevation: 0,
       titleTextStyle: appBarTextStyle,
+      iconTheme: IconThemeData(
+        color: AppColors.accent
+      )
 
     ),
     dividerTheme: const DividerThemeData(
-      thickness: 1,
+      thickness: 2,
       color: AppColors.primiary,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -64,6 +86,7 @@ abstract class AppTheme {
       headlineLarge: versesOrHadethStyle,
       titleLarge: sebhaCount,
       labelMedium: sebhaCount.copyWith(color: AppColors.white),
+      titleSmall: appBarTextStyleDetail
       
 
     )
@@ -96,11 +119,14 @@ abstract class AppTheme {
         backgroundColor: AppColors.transparent,
         elevation: 0,
         titleTextStyle: appBarTextStyle!.copyWith(color: Colors.white),
+      iconTheme: IconThemeData(
+        color: AppColors.white
+      )
 
       ),
 
       dividerTheme: const DividerThemeData(
-        thickness: 1,
+        thickness: 2,
         color: AppColors.accentDark,
       ),
 
@@ -118,7 +144,8 @@ abstract class AppTheme {
         displayLarge: surahTextStyle.copyWith(color: AppColors.white),
         headlineLarge: versesOrHadethStyle.copyWith(color: AppColors.accentDark),
         titleLarge: sebhaCount.copyWith(color: AppColors.white),
-        labelMedium: sebhaCount
+        labelMedium: sebhaCount,
+        titleSmall: appBarTextStyleDetail!.copyWith(color: AppColors.accentDark),
 
       )
 

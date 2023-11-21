@@ -1,4 +1,4 @@
-import 'dart:ui';
+
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +65,7 @@ class _SettingsState extends State<Settings> {
         SizedBox(width: 18,),
         Text(tilte,style: Theme.of(context).textTheme.bodySmall,),
         Spacer(),
-        Switch(value: switchValue, onChanged: onChanged,activeColor: AppColors.accentDark,)
+        Switch(value: switchValue, onChanged: onChanged,activeColor: Theme.of(context).cardColor,)
 
       ],
     );

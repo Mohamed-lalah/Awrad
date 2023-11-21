@@ -1,5 +1,7 @@
 
 
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami/shared.dart';
@@ -8,8 +10,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 class prefsHelper  extends ChangeNotifier{
 
   String currentLocale = "en";
- late  bool arSwitch ;
-  late bool  darkModeSwitch;
+  bool arSwitch= false ;
+  bool  darkModeSwitch= false;
+
+
 
 
 
@@ -17,10 +21,13 @@ class prefsHelper  extends ChangeNotifier{
     String? newLnage =Shared.getLocale();
     String ? newMode= Shared.getMode();
     setCurrentLocale(newLnage??"en");
+    if (currentLocale=="ar")
+      arSwitch=true;
     if (newMode=="light"){
       setCurrentMode(ThemeMode.light);
     }
     if (newMode=="dark"){
+      darkModeSwitch=true;
       setCurrentMode(ThemeMode.dark);
     }
 

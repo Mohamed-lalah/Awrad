@@ -38,7 +38,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
           centerTitle: true,
           backgroundColor: AppColors.transparent,
           elevation: 0,
-          title:Text("${argument.title}",style:AppTheme.appBarTextStyle),
+          title:Text("${argument.title}",style:Theme.of(context).textTheme.titleSmall),
+
 
 
 
@@ -65,7 +66,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     fileContent= file;
       List<String>fileLines = fileContent.split("\n");
       for (int i=0 ;i<fileLines.length;i++){
-        fileLines[i]+= argument.isQuranFile ? " ${i+1} " : " ";
+        fileLines[i]+= argument.isQuranFile ? " (${i+1}) " : " ";
       }
       fileContent=fileLines.join();
 
