@@ -50,7 +50,10 @@ class _RadioTabState extends State<RadioTab> {
                return Center(child:  Text(snapshot.toString()),);
              }
              else if (snapshot.connectionState== ConnectionState.waiting){
-               return Center(child: CircularProgressIndicator(),);
+               return Center(child: CircularProgressIndicator(
+                 color: Theme.of(context).brightness==Brightness.light?
+                 AppColors.primiary : AppColors.accentDark,
+               ),);
              }
              else {
                return SizedBox(

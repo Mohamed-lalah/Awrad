@@ -3,6 +3,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:islami/data/model/RadioModel.dart';
 
+import '../../../../utilities/app_colors.dart';
+
 class RadioItem extends StatelessWidget {
  late  Radios radios ;
  late  AudioPlayer audioPlayer ;
@@ -25,10 +27,12 @@ class RadioItem extends StatelessWidget {
           children: [
             IconButton(onPressed: (){
               play();
-            }, icon: Icon(Icons.play_arrow, size: 40,color: Theme.of(context).primaryColor,)),
+            }, icon: Icon(Icons.play_arrow, size: 40,color: Theme.of(context).brightness==Brightness.light?
+            AppColors.primiary : AppColors.accentDark,)),
             IconButton(onPressed: (){
               stop();
-            }, icon: Icon(Icons.pause, size: 40,color: Theme.of(context).primaryColor,))
+            }, icon: Icon(Icons.pause, size: 40,color: Theme.of(context).brightness==Brightness.light?
+            AppColors.primiary : AppColors.accentDark,))
           ],
         ),
       ],
