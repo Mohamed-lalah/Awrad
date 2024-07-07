@@ -21,13 +21,10 @@ class prefsHelper  extends ChangeNotifier{
     String? newLnage =Shared.getLocale();
     String ? newMode= Shared.getMode();
     setCurrentLocale(newLnage??"en");
-    if (currentLocale=="ar")
-      arSwitch=true;
     if (newMode=="light"){
       setCurrentMode(ThemeMode.light);
     }
     if (newMode=="dark"){
-      darkModeSwitch=true;
       setCurrentMode(ThemeMode.dark);
     }
 
