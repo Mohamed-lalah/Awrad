@@ -1,4 +1,4 @@
-# Islami
+# Awrad
 
 A new Flutter project.
 
