@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami/shared.dart';
 import 'package:islami/providers/settings_provider.dart';
+import 'package:islami/ui/screens/SplashScreen/splash_screen.dart';
 import 'package:islami/ui/screens/home/home_screen.dart';
 import 'package:islami/ui/screens/screen_details/details_screeen.dart';
 import 'package:islami/ui/utilities/app_colors.dart';
@@ -46,8 +47,9 @@ class MyApp extends StatelessWidget {
     routes:   {
       HomeScreen.routeName :(_)=> HomeScreen(),
       DetailsScreen.routeName: (_)=>DetailsScreen(),
+      SplashScreen.routeName: (_)=>SplashScreen()
     },
-      initialRoute: HomeScreen.routeName,
+      initialRoute: SplashScreen.routeName,
     );
   }
 }

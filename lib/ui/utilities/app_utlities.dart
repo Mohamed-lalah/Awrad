@@ -12,5 +12,11 @@ static const headSebha= "assets/images/head_sebha_logo.png";
 static const bodySebha= "assets/images/body_sebha_logo.png";
 static const bodySebhaDark= "assets/images/body_sebha_dark.png";
 static const headSebhaDark= "assets/images/head_sebha_dark.png";
+static const splash= "assets/images/splash.png";
+static const splashDark= "assets/images/splashdark.png";
+
+
+
+
 
 }
