@@ -8,7 +8,7 @@ class Shared {
 
 
   static setLocale(String value )async{
-    await  preferences.setString("lang",value  );
+    await  preferences.setString("lang",value);
   }
 
   static getLocale (){
@@ -21,5 +21,21 @@ class Shared {
 
   static getMode(){
     return preferences.getString("Theme");
+  }
+
+  static setThemeSwitch(bool themeSwitch )async{
+    await  preferences.setBool("themeSwitch",themeSwitch);
+  }
+
+  static getThemeSwitch(){
+    return preferences.getBool("themeSwitch");
+  }
+
+  static setlangSwitch(bool langSwitch )async{
+    await  preferences.setBool("langSwitch",langSwitch);
+  }
+
+  static getlangSwitch(){
+    return preferences.getBool("langSwitch");
   }
 }

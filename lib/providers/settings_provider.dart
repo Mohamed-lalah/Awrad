@@ -10,12 +10,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 class prefsHelper  extends ChangeNotifier{
 
   String currentLocale = "en";
-  bool arSwitch= false ;
+  bool langSwitch= false ;
   bool  darkModeSwitch= false;
-
-
-
-
 
   void sharedInit () async {
     String? newLnage =Shared.getLocale();
@@ -28,6 +24,18 @@ class prefsHelper  extends ChangeNotifier{
       setCurrentMode(ThemeMode.dark);
     }
 
+    bool themeSwitch= Shared.getThemeSwitch();
+    if (themeSwitch == true){
+      darkModeSwitch= true;
+    }else
+      darkModeSwitch=false;
+
+    bool langSwitchShared= Shared.getlangSwitch();
+    if (langSwitchShared= true){
+      langSwitch=true;
+    }else {
+      langSwitch=false;
+    }
   }
 
   ThemeMode currentMode = ThemeMode.light;
@@ -49,9 +57,18 @@ class prefsHelper  extends ChangeNotifier{
     if (newThemeMode== ThemeMode.dark){
       Shared.setTheme("dark");
     }
+    notifyListeners();
+  }
 
+  void setThemeSwitch(bool themeSwitch){
+    darkModeSwitch= themeSwitch;
+    Shared.setThemeSwitch(themeSwitch);
+    notifyListeners();
+  }
 
-
+  void setlangSwitch(bool langSwitch2){
+    langSwitch= langSwitch2;
+    Shared.setlangSwitch(langSwitch2);
     notifyListeners();
   }
 }

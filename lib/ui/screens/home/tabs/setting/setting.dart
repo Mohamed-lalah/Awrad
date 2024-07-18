@@ -30,29 +30,29 @@ class _SettingsState extends State<Settings> {
         ),
         SizedBox(height: 10,),
 
-        buildSettingTab("العربيه", provider.arSwitch, (newValue) {
-
-          provider.arSwitch= newValue;
-
-          if(provider.arSwitch){
+        buildSettingTab("العربيه", provider.langSwitch, (newValue) {
+          provider.langSwitch= newValue;
+          if(provider.langSwitch){
             provider.setCurrentLocale("ar");
-
+            provider.setlangSwitch(true);
           }
           else {
             provider.setCurrentLocale("en");
-
+            provider.setlangSwitch(false);
           }
         }
         ),
-
-
         buildSettingTab(AppLocalizations.of(context)!.darkMode, provider.darkModeSwitch, (newValue)  {
           provider.darkModeSwitch=newValue;
           if (provider.darkModeSwitch){
             provider.setCurrentMode(ThemeMode.dark);
+            provider.setThemeSwitch(true);
           }
-          else
+          else {
             provider.setCurrentMode(ThemeMode.light);
+            provider.setThemeSwitch(false);
+          }
+
 
         })
       ],
